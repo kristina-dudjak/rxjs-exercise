@@ -1,0 +1,8 @@
+.cocktails__list {
+  list-style-type: none;
+
+  &__item {
+    margin: 20px;
+    border: 1px solid gray;
+  }
+}

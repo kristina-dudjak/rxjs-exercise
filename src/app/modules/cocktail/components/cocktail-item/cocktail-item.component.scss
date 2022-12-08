@@ -1,0 +1,10 @@
+.cocktail {
+  display: flex;
+  cursor: pointer;
+  gap: 16px;
+  align-items: center;
+  &__img {
+    width: 10%;
+    margin: 20px;
+  }
+}

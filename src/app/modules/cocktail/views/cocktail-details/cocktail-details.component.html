@@ -1,0 +1,11 @@
+<div
+  class="cocktail"
+  *ngIf="(cocktail$ | async) && (cocktail$ | async) as cocktail"
+>
+  <img class="cocktail__img" [src]="cocktail.strDrinkThumb" />
+  <div class="cocktail__info">
+    <h2>{{ cocktail.strDrink }}</h2>
+    <p>{{ cocktail.strAlcoholic }}</p>
+  </div>
+  <p>{{ cocktail.strInstructions }}</p>
+</div>

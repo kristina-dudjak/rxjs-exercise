@@ -1,0 +1,5 @@
+<ul class="cocktails__list">
+  <li class="cocktails__list__item" *ngFor="let cocktail of cocktails$ | async">
+    <app-cocktail-item [cocktail]="cocktail"></app-cocktail-item>
+  </li>
+</ul>
