@@ -5,7 +5,8 @@ import { CocktailItemComponent } from './components/cocktail-item/cocktail-item.
 import { CombineAllComponent } from './views/combine-all/combine-all.component'
 import { CocktailRoutingModule } from './cocktail-routing.module'
 import { ForkJoinComponent } from './views/fork-join/fork-join.component'
-import { CocktailDetailsComponent } from './views/cocktail-details/cocktail-details.component'
+import { CocktailDetailsComponent } from './views/cocktail-details/cocktail-details.component';
+import { ConcatAllComponent } from './views/concat-all/concat-all.component'
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { CocktailDetailsComponent } from './views/cocktail-details/cocktail-deta
     CocktailItemComponent,
     CombineAllComponent,
     ForkJoinComponent,
-    CocktailDetailsComponent
+    CocktailDetailsComponent,
+    ConcatAllComponent
   ],
   imports: [CommonModule, CocktailRoutingModule]
 })

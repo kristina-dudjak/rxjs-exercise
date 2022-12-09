@@ -26,9 +26,9 @@ export class CocktailService extends Store<CocktailInterface> {
     this.setState({ cocktails })
   }
 
-  // addCocktailState (cocktail: Cocktail) {
-  //   this.setState({ cocktails: this.state.cocktails.concat(cocktail) })
-  // }
+  addCocktailState (cocktail: Cocktail) {
+    this.setState({ cocktails: this.state.cocktails.concat(cocktail) })
+  }
 
   // getCocktails () {
   //   var calls: Observable<Cocktail>[] = []
