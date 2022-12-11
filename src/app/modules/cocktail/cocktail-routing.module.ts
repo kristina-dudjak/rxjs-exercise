@@ -3,10 +3,16 @@ import { RouterModule, Routes } from '@angular/router'
 import { CocktailsListComponent } from './components/cocktails-list/cocktails-list.component'
 import { CocktailDetailsComponent } from './views/cocktail-details/cocktail-details.component'
 import { CombineAllComponent } from './views/combine-all/combine-all.component'
+import { CombineLatestComponent } from './views/combine-latest/combine-latest.component'
 import { ConcatAllComponent } from './views/concat-all/concat-all.component'
 import { ForkJoinComponent } from './views/fork-join/fork-join.component'
+import { NavigatorComponent } from './views/navigator/navigator.component'
 
 const routes: Routes = [
+  {
+    path: '',
+    component: NavigatorComponent
+  },
   {
     path: 'forkJoin',
     component: ForkJoinComponent,
@@ -38,6 +44,20 @@ const routes: Routes = [
   {
     path: 'combineAll',
     component: CombineAllComponent,
+    children: [
+      {
+        path: '',
+        component: CocktailsListComponent
+      },
+      {
+        path: 'details/:id',
+        component: CocktailDetailsComponent
+      }
+    ]
+  },
+  {
+    path: 'combineLatest',
+    component: CombineLatestComponent,
     children: [
       {
         path: '',
