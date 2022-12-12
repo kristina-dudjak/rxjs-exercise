@@ -1,0 +1,25 @@
+<div class="cocktails">
+  <div class="cocktails__options" *ngIf="!isDetailsPage()">
+    <p class="cocktails__options__description">Items per page:</p>
+    <select
+      class="cocktails__options__select"
+      #items
+      (change)="onSelected(items.value)"
+    >
+      <option class="cocktails__options__select__option">1</option>
+      <option class="cocktails__options__select__option">2</option>
+      <option class="cocktails__options__select__option">3</option>
+      <option class="cocktails__options__select__option">4</option>
+      <option class="cocktails__options__select__option">5</option>
+    </select>
+  </div>
+  <router-outlet
+    class="cocktails__items"
+    *ngIf="cocktails$ | async"
+  ></router-outlet>
+  <button class="cocktails__more" (click)="loadMore()" *ngIf="!isDetailsPage()">
+    Load more
+  </button>
+</div>
+
+<ng-container *ngIf="currentNumberChanged$ | async"></ng-container>

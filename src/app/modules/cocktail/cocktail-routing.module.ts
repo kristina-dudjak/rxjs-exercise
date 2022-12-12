@@ -5,6 +5,7 @@ import { CocktailDetailsComponent } from './views/cocktail-details/cocktail-deta
 import { CombineAllComponent } from './views/combine-all/combine-all.component'
 import { CombineLatestComponent } from './views/combine-latest/combine-latest.component'
 import { ConcatAllComponent } from './views/concat-all/concat-all.component'
+import { ConcatMapComponent } from './views/concat-map/concat-map.component'
 import { ForkJoinComponent } from './views/fork-join/fork-join.component'
 import { NavigatorComponent } from './views/navigator/navigator.component'
 
@@ -58,6 +59,20 @@ const routes: Routes = [
   {
     path: 'combineLatest',
     component: CombineLatestComponent,
+    children: [
+      {
+        path: '',
+        component: CocktailsListComponent
+      },
+      {
+        path: 'details/:id',
+        component: CocktailDetailsComponent
+      }
+    ]
+  },
+  {
+    path: 'concatMap',
+    component: ConcatMapComponent,
     children: [
       {
         path: '',
