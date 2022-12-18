@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { forkJoin, Observable, tap } from 'rxjs'
+import { forkJoin, tap } from 'rxjs'
 import { Cocktail } from 'src/app/shared/models/Cocktail'
 import { CocktailService } from 'src/app/shared/services/cocktail.service'
 
@@ -11,7 +11,7 @@ import { CocktailService } from 'src/app/shared/services/cocktail.service'
 export class ForkJoinComponent {
   constructor (private cocktailService: CocktailService) {}
 
-  cocktails$: Observable<Cocktail[]> = forkJoin([
+  cocktails$ = forkJoin<Cocktail[]>([
     this.cocktailService.getCocktail(),
     this.cocktailService.getCocktail(),
     this.cocktailService.getCocktail(),

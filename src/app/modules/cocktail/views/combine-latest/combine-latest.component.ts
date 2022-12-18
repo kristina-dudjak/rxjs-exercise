@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { combineLatest, Observable, tap } from 'rxjs'
+import { combineLatest, tap } from 'rxjs'
 import { Cocktail } from 'src/app/shared/models/Cocktail'
 import { CocktailService } from 'src/app/shared/services/cocktail.service'
 
@@ -11,7 +11,7 @@ import { CocktailService } from 'src/app/shared/services/cocktail.service'
 export class CombineLatestComponent {
   constructor (private cocktailService: CocktailService) {}
 
-  cocktails$: Observable<Cocktail[]> = combineLatest([
+  cocktails$ = combineLatest<Cocktail[]>([
     this.cocktailService.getCocktail(),
     this.cocktailService.getCocktail(),
     this.cocktailService.getCocktail(),
